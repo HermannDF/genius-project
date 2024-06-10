@@ -90,7 +90,7 @@ const padListener = (e) => {
         }
 
         waitForPlayerClick();
-    }, 250);
+    }, 500);
 };
 
 _gui.pads.forEach((pad) => {
