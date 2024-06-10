@@ -17,7 +17,11 @@
 
 /**********************************/
 /* Color Guide:
-/* 
+/*
+/* #004d22 : dark-green
+/* #46070a : dark-red
+/* #625104 : dark-yellow
+/* #052548 : dark-blue
 /* #00A74A : normal-green
 /* #9F0F17 : normal-red
 /* #CCA707 : normal-yellow
@@ -37,6 +41,11 @@
 /**********************************/
 
 :root {
+    --clr-dark-green: #008039;
+    --clr-dark-red: #750b10;
+    --clr-dark-yellow: #ac8e06;
+    --clr-dark-blue: #083e78;
+
     --clr-normal-green: #00a74a;
     --clr-normal-red: #9f0f17;
     --clr-normal-yellow: #cca707;
@@ -46,6 +55,56 @@
     --clr-light-red: #ff4c4c;
     --clr-light-yellow: #fed93f;
     --clr-light-blue: #1c8cff;
+
+    --clr-grad-green-off: radial-gradient(
+        farthest-corner at 100% 100%,
+        var(--clr-dark-green),
+        var(--clr-normal-green),
+        var(--clr-dark-green)
+    );
+    --clr-grad-red-off: radial-gradient(
+        farthest-corner at 0% 100%,
+        var(--clr-dark-red),
+        var(--clr-normal-red),
+        var(--clr-dark-red)
+    );
+    --clr-grad-yellow-off: radial-gradient(
+        farthest-corner at 100% 0%,
+        var(--clr-dark-yellow),
+        var(--clr-normal-yellow),
+        var(--clr-dark-yellow)
+    );
+    --clr-grad-blue-off: radial-gradient(
+        farthest-corner at 0% 0%,
+        var(--clr-dark-blue),
+        var(--clr-normal-blue),
+        var(--clr-dark-blue)
+    );
+
+    --clr-grad-green-on: radial-gradient(
+        farthest-corner at 100% 100%,
+        var(--clr-normal-green),
+        var(--clr-light-green),
+        var(--clr-normal-green)
+    );
+    --clr-grad-red-on: radial-gradient(
+        farthest-corner at 0% 100%,
+        var(--clr-normal-red),
+        var(--clr-light-red),
+        var(--clr-normal-red)
+    );
+    --clr-grad-yellow-on: radial-gradient(
+        farthest-corner at 100% 0%,
+        var(--clr-normal-yellow),
+        var(--clr-light-yellow),
+        var(--clr-normal-yellow)
+    );
+    --clr-grad-blue-on: radial-gradient(
+        farthest-corner at 0% 0%,
+        var(--clr-normal-blue),
+        var(--clr-light-blue),
+        var(--clr-normal-blue)
+    );
 
     --clr-border: #333333;
     --clr-center: #ece7ee;
@@ -122,39 +181,39 @@ body {
 }
 
 .game__pad--tl {
-    background-color: var(--clr-normal-green);
+    background: var(--clr-grad-green-off);
     border-top-left-radius: 100%;
 }
 
 .game__pad--tr {
-    background-color: var(--clr-normal-red);
+    background: var(--clr-grad-red-off);
     border-top-right-radius: 100%;
 }
 
 .game__pad--bl {
-    background-color: var(--clr-normal-yellow);
+    background: var(--clr-grad-yellow-off);
     border-bottom-left-radius: 100%;
 }
 
 .game__pad--br {
-    background-color: var(--clr-normal-blue);
+    background: var(--clr-grad-blue-off);
     border-bottom-right-radius: 100%;
 }
 
 .game__pad--tl.game__pad--active {
-    background-color: var(--clr-light-green);
+    background: var(--clr-grad-green-on);
 }
 
 .game__pad--tr.game__pad--active {
-    background-color: var(--clr-light-red);
+    background: var(--clr-grad-red-on);
 }
 
 .game__pad--bl.game__pad--active {
-    background-color: var(--clr-light-yellow);
+    background: var(--clr-grad-yellow-on);
 }
 
 .game__pad--br.game__pad--active {
-    background-color: var(--clr-light-blue);
+    background: var(--clr-grad-blue-on);
 }
 
 .game__pad--btn {
