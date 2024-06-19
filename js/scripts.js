@@ -56,6 +56,8 @@ _gui.strict.addEventListener("click", () => {
 });
 
 _gui.start.addEventListener("click", () => {
+    if (_data.score != 0) return;
+
     startGame();
 });
 
