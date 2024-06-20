@@ -220,9 +220,11 @@ const resetOrPlayAgain = () => {
 };
 
 const changePadCursor = (cursorType) => {
-    _gui.pads.forEach((pad) => {
-        pad.style.cursor = cursorType;
-    });
+    if (window.screen.width > 600) {
+        _gui.pads.forEach((pad) => {
+            pad.style.cursor = cursorType;
+        });
+    }
 };
 
 const disablePads = () => {
